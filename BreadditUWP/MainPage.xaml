@@ -1,0 +1,83 @@
+﻿<Page
+    x:Class="BreadditUWP.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:BreadditUWP"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" >
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button Name="HamburgerButton" FontFamily="Segoe MDL2 Assets" Content="&#xE700;" 
+                       FontSize="22" FontWeight="Bold" RelativePanel.AlignLeftWithPanel="True" Click="HamburgerButton_Click"/>
+            <Button x:Name="generic1" Content="Front Page" FontSize="16" Margin="20,0,0,0"/>
+            <Button Name="generic3" Content="New" FontSize="16" Margin="20, 0, 0, 0"/>
+            <Button Name="generic4" Content="Rising" FontSize="16" Margin="20, 0, 0, 0"/>
+            <Button Name="generic5" Content="Controversial" FontSize="16" Margin="20, 0, 0, 0"/>
+            <Button Name="generic6" Content="Top" FontSize="16" Margin="20, 0, 0, 0"/>
+            <Button Name="generic7" Content="Gilded" FontSize="16" Margin="20, 0, 0, 0"/>
+            <Button Name="generic8" Content="Wiki" FontSize="16" Margin="20, 0, 0, 0"/>
+            <Button Name="generic9" Content="Promoted" FontSize="16" Margin="20, 0, 0, 0"/>
+
+
+        </StackPanel>
+        <SplitView Name="MySplitView" Grid.Row="1" CompactPaneLength="43" IsPaneOpen="False" OpenPaneLength="250"
+                   DisplayMode="CompactOverlay">
+            <SplitView.Pane>
+                <ListBox Name="MyListBox" SelectionMode="Single" Background="LightGray" SelectionChanged="MyListBox_SelectionChanged">
+                    <ListBoxItem Name="Settings">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="SettingsButton" FontFamily="Segoe MDL2 Assets" FontSize="20" 
+                                        Text="&#xE713;" />
+                            <TextBlock Text="Settings" FontSize="16" Margin="20, 0, 0, 0" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="SubredditPlaceHolder">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="SubPlaceHolder"  FontSize="20" 
+                                        Text="/r/" />
+                            <TextBlock Text="Subscribed Subs" FontSize="16" Margin="20, 0, 0, 0"  />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="Search">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="SearchButton" FontFamily="Segoe MDL2 Assets" FontSize="20" 
+                                        Text="&#xE71E;" />
+                            <TextBox FontSize="16" Margin="20, 0, 0, 0" Width="180" />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="Login">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="LoginButton" FontFamily="Segoe MDL2 Assets" FontSize="20" 
+                                        Text="&#xE77B;" />
+                            <TextBlock Text="Login/out" FontSize="16" Margin="20, 0, 0, 0"  />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="NSFW">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="NSFWButtom" FontFamily="Segoe MDL2 Assets" FontSize="20" 
+                                        Text="&#xE730;" />
+                            <TextBlock Text="Show NSFW" FontSize="16" Margin="20, 0, 0, 0"  />
+                        </StackPanel>
+                    </ListBoxItem>
+                    <ListBoxItem Name="Saved">
+                        <StackPanel Orientation="Horizontal">
+                            <TextBlock Name="SavedButtom" FontFamily="Segoe MDL2 Assets" FontSize="20" 
+                                        Text="&#xE735;" />
+                            <TextBlock Text="Saved Posts" FontSize="16" Margin="20, 0, 0, 0"  />
+                        </StackPanel>
+                    </ListBoxItem>
+                </ListBox>
+            </SplitView.Pane>
+            <Frame Name="MyFrame" Margin="10, 10, 0, 0" BorderBrush="Black" BorderThickness="1">
+            </Frame>
+        </SplitView>
+    </Grid>
+</Page>
